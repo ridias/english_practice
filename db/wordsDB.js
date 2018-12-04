@@ -14,7 +14,7 @@ var WordsCRUD = function(){
                 if(err) console.error("Something happen", err)
             })
         },
-        timestampData: true
+        timestampData: false
     })
 
     this.db.words.ensureIndex({ fieldName: "word", unique: true }, (err) => { if(err) console.error("Error creating index: ", err)})
