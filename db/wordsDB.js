@@ -53,7 +53,7 @@ WordsCRUD.prototype.update = (newWordJSONtoUpdate) =>{
     return new Promise((resolve, reject) =>{
         this.db.words.update({ _id: newWordJSONtoUpdate._id }, newWordJSONtoUpdate, {}, (err, numRowsReplaced) =>{
             if(err) reject(err)
-            resolve(numRowReplaced)
+            resolve(numRowsReplaced)
         })
     })
 }

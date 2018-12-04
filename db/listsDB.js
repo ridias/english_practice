@@ -52,7 +52,7 @@ ListsCRUD.prototype.update = (newListJSONtoUpdate) =>{
     return new Promise((resolve, reject) =>{
         this.db.lists.update({ _id: newListJSONtoUpdate._id }, newListJSONtoUpdate, {}, (err, numRowsReplaced) =>{
             if(err) reject(err)
-            resolve(numRowReplaced)
+            resolve(numRowsReplaced)
         })
     })
 }
