@@ -1,27 +1,28 @@
-var Timer = () => {
+var Timer = function() {
     this.seconds = 0
     this.interval = null
 }
 
-Timer.prototype.setSeconds = (seconds) => {
+Timer.prototype.setSeconds = function(seconds){
     this.seconds = seconds
 }
 
-Timer.prototype.getSeconds = () => {
+Timer.prototype.getSeconds = function(){
     return this.seconds
 }
 
-Timer.prototype.start = () => {
-    var myself = this
+Timer.prototype.start = function() {
     this.interval = setInterval(() => {
-        myself.seconds -= 1
+        this.seconds -= 1
+        console.log(this.seconds)
+        if(this.isTimerFinished()){ this.stop() }
     }, 1000)
 }
 
-Timer.prototype.stop = () => {
+Timer.prototype.stop = function() {
     clearInterval(this.interval)
 }
 
-Timer.prototype.isTimerFinished = () => {
+Timer.prototype.isTimerFinished = function() {
     return this.seconds <= 0;
 }
