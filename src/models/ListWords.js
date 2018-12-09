@@ -1,24 +1,24 @@
-var ListWords = () =>{
+var ListWords = function() {
     this.words = []
     this.name = ""
 }
 
-ListWords.prototype.setName = (name) => {
+ListWords.prototype.setName = function(name) {
     this.name = name
 }
 
-ListWords.prototype.setWords = (words) => {
+ListWords.prototype.setWords = function(words) {
     this.words = words
 }
 
-ListWords.prototype.getName = () => {
+ListWords.prototype.getName = function() {
     return this.name
 }
 
-ListWords.prototype.getWords = () => { 
+ListWords.prototype.getWords = function() { 
     return this.words
 }
 
-ListWords.prototype.isItValidList = () => {
+ListWords.prototype.isItValidList = function() {
     return this.words.length <= 50
 }
